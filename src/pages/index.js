@@ -23,8 +23,8 @@ const Index = ({ data: { allMarkdownRemark } }) => {
 
   return (
     <div className="homepage">
-      <SEO title="Home" />
-      <TitlePage text={hello} />
+      <SEO title="IRS News | Universal Equations"/>
+        <TitlePage text={hello}/>
       <p>{subline}</p>
       <hr style={{ margin: `2rem 0` }} />
       <h2>
@@ -44,20 +44,22 @@ const Index = ({ data: { allMarkdownRemark } }) => {
                 description,
                 title,
                 image,
+                  url,
               },
               timeToRead,
               fields: { slug },
             },
           }) => (
               <PostItem
-                slug={`/blog/${slug}`}
-                background={background}
-                category={category}
-                date={date}
-                timeToRead={timeToRead}
-                title={title}
-                description={description}
-                image={image}
+                  slug={`/blog/${slug}`}
+                  background={background}
+                  category={category}
+                  date={date}
+                  timeToRead={timeToRead}
+                  title={title}
+                  description={description}
+                  image={image}
+                  url={url}
               />
             ),
         )}
@@ -91,7 +93,7 @@ export const query = graphql`
             background
             image
             date(formatString: $dateFormat)
-
+            url
           }
           timeToRead
           fields {

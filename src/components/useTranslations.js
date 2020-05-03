@@ -54,6 +54,7 @@ const query = graphql`
             seeMorePWA
             maintainedBy
             contributeMessage
+
           }
         }
       }

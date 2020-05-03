@@ -29,10 +29,10 @@ const Footer = () => {
         <p>
           {maintainedBy}{' '}
           <a
-            href="https://twitter.com/_diogorodrigues"
-            target="_blank"
+              href="https://twitter.com/uequations"
+              target="_blank"
           >
-            @_diogorodrigues
+            @uequations
           </a>
           . {contributeMessage}{' '}
           <a

@@ -2,7 +2,7 @@
   "name": "using-i18n",
   "private": true,
   "description": "Gatsby example site using MDX and dependency-free i18n",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "author": "Mensah Alkebu-Lan <malkebu-lan@uequations.com>",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {

@@ -21,34 +21,36 @@ const Blog = props => {
 
   return (
     <>
-      <SEO title="Blog" />
-      <TitlePage text="Blog" />
+        <SEO title="IRS News | Universal Equations"/>
+        <TitlePage text="IRS News | Universal Equations"/>
 
-      <S.ListWrapper>
-        {postList.map(
-          ({
-            node: {
-              frontmatter: {
-                background,
-                category,
-                date,
-                description,
+        <S.ListWrapper>
+            {postList.map(
+                ({
+                     node: {
+                         frontmatter: {
+                             background,
+                             category,
+                             date,
+                             description,
                 title,
                 image,
+                             url,
               },
               timeToRead,
               fields: { slug },
             },
           }) => (
             <PostItem
-              slug={`/blog/${slug}`}
-              background={background}
-              category={category}
-              date={date}
-              timeToRead={timeToRead}
-              title={title}
-              description={description}
-              image={image}
+                slug={`/blog/${slug}`}
+                background={background}
+                category={category}
+                date={date}
+                timeToRead={timeToRead}
+                title={title}
+                description={description}
+                image={image}
+                url={url}
             />
           ),
         )}
@@ -86,7 +88,7 @@ export const query = graphql`
             background
             image
             date(formatString: $dateFormat)
-
+            url
           }
           timeToRead
           fields {

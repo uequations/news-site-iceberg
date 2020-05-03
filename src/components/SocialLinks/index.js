@@ -19,9 +19,9 @@ const SocialLinks = () => {
       </S.SocialLinksItem>
       <S.SocialLinksItem>
         <S.SocialLinksLink
-          href="https://twitter.com/_diogorodrigues"
-          title="Twitter"
-          target="_blank"
+            href="https://twitter.com/uequations"
+            title="Twitter"
+            target="_blank"
         >
           <Twitter />
         </S.SocialLinksLink>

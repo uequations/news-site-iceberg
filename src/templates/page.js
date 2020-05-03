@@ -11,9 +11,10 @@ const Page = props => {
   return (
     <>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description}
-        image={post.frontmatter.image}
+          title={post.frontmatter.title}
+          description={post.frontmatter.description}
+          image={post.frontmatter.image}
+          url={post.frontmatter.url}
       />
       <TitlePage text={post.frontmatter.title} />
       <S.Content>

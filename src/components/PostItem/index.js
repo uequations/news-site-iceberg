@@ -14,6 +14,7 @@ const PostItem = ({
   title,
   description,
   image,
+  url,
 }) => {
   const { toRead } = useTranslations();
 
@@ -40,26 +41,32 @@ const PostItem = ({
     return img.node.childImageSharp.fluid.src.includes('cover');
   });
 
-  const imgName = image ? image.split('/')[3] : false;
+  const imgName = image ? image.split('/')[3] : false
 
   const postImg = imgName
-    ? listImages.edges.find(img => {
-        return img.node.childImageSharp.fluid.src.includes(imgName);
+      ? listImages.edges.find(img => {
+        return img.node.childImageSharp.fluid.src.includes(imgName)
       })
-    : false;
+      : false
+
+  const anchorStyle = {
+    textDecoration: 'none',
+    display: 'block',
+    marginBottom: 'var(--space)',
+  }
 
   return (
-    <S.PostItemLink to={slug}>
-      <S.PostItemWrapper>
-        {postImg && (
-          <S.PostItemImg
-            fluid={postImg.node.childImageSharp.fluid}
-            alt={title}
-          />
-        )}
-        {!postImg && (
-          <S.PostItemImg
-            fluid={postImgCover.node.childImageSharp.fluid}
+      <a style={anchorStyle} href={url} target={'_self'}>
+        <S.PostItemWrapper>
+          {postImg && (
+              <S.PostItemImg
+                  fluid={postImg.node.childImageSharp.fluid}
+                  alt={title}
+              />
+          )}
+          {!postImg && (
+              <S.PostItemImg
+                  fluid={postImgCover.node.childImageSharp.fluid}
             alt={title}
           />
         )}
@@ -69,13 +76,13 @@ const PostItem = ({
             {category}
           </S.PostItemTag>
           <S.PostItemDate>
-            {date} • {timeToRead} min {toRead}
+            Last accessed: {date}
           </S.PostItemDate>
           <S.PostItemTitle>{title}</S.PostItemTitle>
           <S.PostItemDescription>{description}</S.PostItemDescription>
         </S.PostItemInfo>
-      </S.PostItemWrapper>
-    </S.PostItemLink>
+        </S.PostItemWrapper>
+      </a>
   );
 };
 
@@ -87,6 +94,7 @@ PostItem.propTypes = {
   timeToRead: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  url: PropTypes.string,
 };
 
 export default PostItem;

@@ -45,7 +45,7 @@ exports.onCreatePage = ({ page, actions }) => {
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
 
-  // Check for "MarkdownRemark" type so that other files (e.g. images) are exluded
+  // Check for "MarkdownRemark" type so that other files (e.g. images) are excluded
   if (node.internal.type === `MarkdownRemark`) {
     // Use path.basename
     // https://nodejs.org/api/path.html#path_path_basename_path_ext
@@ -128,7 +128,8 @@ exports.createPages = async ({ graphql, actions }) => {
   contentMarkdown.forEach(({ node: file }) => {
     // Getting Slug and Title
     const slug = file.fields.slug;
-    const title = file.frontmatter.title;
+    const title = file.frontmatter.title
+    const url = file.frontmatter.url
 
     // Use the fields created in exports.onCreateNode
     const locale = file.fields.locale;
