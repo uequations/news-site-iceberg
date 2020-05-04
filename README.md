@@ -138,3 +138,5 @@ backend:
 ---
 
 This project started based on [this solution](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-i18n) to create a manner to provide translations, but I added a lots of other solutions based on my projects needs (like menu from GraphQL, markdown for pages, pagination, image optmization, styled components, PWA, CMS and more). Feel free to use this solution if you want. :)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0a6425cf-3817-41bf-82f8-a90b4e669f14/deploy-status)](https://app.netlify.com/sites/flamboyant-spence-8d97ac/deploys)
