@@ -13,17 +13,16 @@ import {
     FacebookShareButton,
     LinkedinShareButton,
     PinterestShareButton,
-    TwitterShareButton
-} from "react-share";
+    TwitterShareButton,
+} from 'react-share'
 
 import {
     EmailIcon,
     FacebookIcon,
     LinkedinIcon,
     PinterestIcon,
-    TwitterIcon
-} from "react-share";
-
+    TwitterIcon,
+} from 'react-share'
 
 
 const Index = ({ data: { allMarkdownRemark } }) => {
@@ -48,6 +47,18 @@ const Index = ({ data: { allMarkdownRemark } }) => {
             <EmailShareButton>
                 <EmailIcon/>
             </EmailShareButton>
+            <FacebookShareButton>
+                <FacebookIcon/>
+            </FacebookShareButton>
+            <LinkedinShareButton>
+                <LinkedinIcon/>
+            </LinkedinShareButton>
+            <PinterestShareButton>
+                <PinterestIcon/>
+            </PinterestShareButton>
+            <TwitterShareButton>
+                <TwitterIcon/>
+            </TwitterShareButton>
 
             <hr style={{ margin: `2rem 0` }}/>
 
@@ -99,33 +110,33 @@ const Index = ({ data: { allMarkdownRemark } }) => {
 export default Index
 
 export const query = graphql`
-  query Index($locale: String!, $dateFormat: String!, ) {
-    allMarkdownRemark(
-      filter: {
-        fields: { locale: { eq: $locale } }
-        fileAbsolutePath: {regex: "/(topic)\/.*\\.md$/"}
-      }
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 2
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            description
-            category
-            background
-            image
-            date(formatString: $dateFormat)
-            url
-          }
-          timeToRead
-          fields {
-            locale
-            slug
-          }
+    query Index($locale: String!, $dateFormat: String!, ) {
+        allMarkdownRemark(
+            filter: {
+                fields: { locale: { eq: $locale } }
+                fileAbsolutePath: {regex: "/(topic)\/.*\\.md$/"}
+            }
+            sort: { fields: [frontmatter___date], order: DESC }
+            limit: 2
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        title
+                        description
+                        category
+                        background
+                        image
+                        date(formatString: $dateFormat)
+                        url
+                    }
+                    timeToRead
+                    fields {
+                        locale
+                        slug
+                    }
+                }
+            }
         }
-      }
     }
-  }
 `
