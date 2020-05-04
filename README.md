@@ -1,4 +1,4 @@
-<img src="./src/images/logo-iceberg.svg" width="150">
+<img src="./src/images/favicon.png" width="150">
 
 # News Site with CMS
 
