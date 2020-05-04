@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../images/logo-iceberg.svg';
+import logo from '../../images/favicon.png';
 
 const Logo = () => {
   return <img src={logo} alt="uequations Logo"/>

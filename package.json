@@ -13,7 +13,7 @@
     "lint": "eslint src/**/*.{js,jsx}"
   },
   "dependencies": {
-    "gatsby": "^2.3.3",
+    "gatsby": "^2.21.9",
     "gatsby-image": "^2.2.24",
     "gatsby-plugin-manifest": "^2.2.20",
     "gatsby-plugin-netlify-cms": "^4.1.25",
@@ -37,6 +37,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-icons": "^3.10.0",
+    "react-share": "^4.1.0",
     "styled-components": "^4.4.0",
     "styled-icons": "^8.4.2",
     "styled-media-query": "^2.1.2"

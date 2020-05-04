@@ -2,12 +2,12 @@ import React from 'react'
 
 import { Twitter } from 'styled-icons/boxicons-logos/Twitter'
 import { Github } from 'styled-icons/boxicons-logos/Github'
-import { Facebppk } from 'styled-icons/boxicons-logos/Facebook'
-import { LinkedIn } from 'styled-icons/boxicons-logos/Linkedin'
+import { Facebook } from 'styled-icons/boxicons-logos/Facebook'
+import { Linkedin } from 'styled-icons/boxicons-logos/Linkedin'
 
 import * as S from './styled'
 
-const SocialLinks = () => {
+const SocialShare = () => {
     return (
         <S.SocialLinksList>
             <S.SocialLinksItem>
@@ -43,11 +43,11 @@ const SocialLinks = () => {
                     title="LinkedIn"
                     target="_blank"
                 >
-                    <LinkedIn/>
+                    <Linkedin/>
                 </S.SocialLinksLink>
             </S.SocialLinksItem>
         </S.SocialLinksList>
     )
 }
 
-export default SocialLinks
+export default SocialShare

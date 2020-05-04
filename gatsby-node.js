@@ -104,7 +104,6 @@ exports.createPages = async ({ graphql, actions }) => {
             }
             frontmatter {
               title
-              page
             }
           }
         }
@@ -165,8 +164,8 @@ exports.createPages = async ({ graphql, actions }) => {
   Object.keys(locales).map(lang => {
     // Use the values defined in "locales" to construct the path
     const localizedPath = locales[lang].default
-      ? '/blog'
-      : `${locales[lang].path}/blog`;
+      ? '/topic'
+      : `/topic/${locales[lang].path}`;
 
     return Array.from({ length: numPages }).forEach((_, index) => {
       createPage({
