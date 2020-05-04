@@ -40,7 +40,7 @@ const Index = ({ data: { allMarkdownRemark } }) => {
 
     return (
         <div className="homepage">
-            <SEO title="IRS News | Universal Equations"/>
+            <SEO title="IRS NEWS | Universal Equations"/>
             <TitlePage text={hello}/>
             <p>{subline}</p>
 
@@ -129,6 +129,7 @@ export const query = graphql`
                         image
                         date(formatString: $dateFormat)
                         url
+                        hashTags
                     }
                     timeToRead
                     fields {

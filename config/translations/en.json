@@ -1,6 +1,6 @@
 {
   "home": "Home",
-  "hello": "IRS News",
+  "hello": "IRS NEWS",
   "subline": "The Internal Revenue Service is the nation's tax collection agency and administers the Internal Revenue Code enacted by Congress.",
   "latestPosts": "Latest posts",
   "category": "Category",
@@ -14,5 +14,14 @@
   "aboutProject": "Iceberg Gatsby is a PWA, save it for offline reading.",
   "seeMorePWA": "See more PWA here",
   "maintainedBy": "Maintained by",
-  "contributeMessage": "You can always contribute with the project on"
+  "contributeMessage": "You can always contribute with the project on",
+
+  "addressLine1": "1 Bridge Plaza N",
+  "addressLine2": "Suite 275",
+  "companyPhone": "(267) 775 - 3011",
+  "addressCityStateZip": "Fort Lee, NJ 07024",
+  "companyEmail": "support@uequations.com",
+  "copyright": "support@uequations.com",
+
+  "joinOurNewsletter": "JOIN OUR NEWSLETTER"
 }

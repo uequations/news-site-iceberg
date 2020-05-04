@@ -15,8 +15,8 @@ const PostItem = ({
   description,
   image,
   url,
+                    hashTags,
 }) => {
-  const { toRead } = useTranslations();
 
   const { listImages } = useStaticQuery(
     graphql`
@@ -80,6 +80,7 @@ const PostItem = ({
           </S.PostItemDate>
           <S.PostItemTitle>{title}</S.PostItemTitle>
           <S.PostItemDescription>{description}</S.PostItemDescription>
+          <S.PostItemDescription>{hashTags}</S.PostItemDescription>
         </S.PostItemInfo>
         </S.PostItemWrapper>
       </a>
@@ -95,6 +96,7 @@ PostItem.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   url: PropTypes.string,
+  hashTags: PropTypes.string,
 };
 
 export default PostItem;

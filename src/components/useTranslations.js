@@ -55,6 +55,14 @@ const query = graphql`
             maintainedBy
             contributeMessage
 
+            addressLine1
+            addressLine2
+            companyPhone
+            addressCityStateZip
+            companyEmail
+            copyright
+
+            joinOurNewsletter
           }
         }
       }

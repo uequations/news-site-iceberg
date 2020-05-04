@@ -6,24 +6,25 @@ import * as S from './styled';
 
 const Navigation = ({ isActive, handleToggleMenu }) => {
   const menuItems = useMenu();
-  const { button } = useTranslations();
+  const {joinOurNewsletter} = useTranslations();
 
   return (
     <>
       <S.Navigation className={isActive ? 'active' : ''}>
         {menuItems.map(menu => (
-          <S.NavigationLink
-            to={menu.link}
-            aria-label={menu.name}
+          <S.ExternalNavigationLink
+            href={menu.link}
+            title={menu.name}
             activeClassName="active"
             onClick={() => handleToggleMenu()}>
             {menu.name}
-          </S.NavigationLink>
+          </S.ExternalNavigationLink>
         ))}
 
-        <S.NavigationButton to="" aria-label="Login">
-          {button}
-        </S.NavigationButton>
+          <S.ExternalNavigationButton href={'https://sales.uequations.com/newsletter-signup/'} title={'JOIN OUR NEWSLETTER'} target={'_self'} aria-label="Login">
+              {joinOurNewsletter}
+          </S.ExternalNavigationButton>
+
       </S.Navigation>
     </>
   );

@@ -21,8 +21,8 @@ const Blog = props => {
 
   return (
     <>
-        <SEO title="IRS News | Universal Equations"/>
-        <TitlePage text="IRS News | Universal Equations"/>
+        <SEO title="IRS NEWS | Universal Equations"/>
+        <TitlePage text="IRS NEWS"/>
 
         <S.ListWrapper>
             {postList.map(
@@ -89,6 +89,7 @@ export const query = graphql`
             image
             date(formatString: $dateFormat)
             url
+            hashTags
           }
           timeToRead
           fields {

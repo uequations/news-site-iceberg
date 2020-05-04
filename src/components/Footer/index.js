@@ -1,5 +1,4 @@
 import React from 'react';
-import useTranslations from '../useTranslations';
 import SocialLinks from '../SocialLinks';
 import CompanyAddress from '../CompanyAddress'
 

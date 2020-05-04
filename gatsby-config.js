@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `IRS News | Universal Equations`,
+    title: `IRS NEWS | Universal Equations`,
     description: `The Internal Revenue Service is the nation's tax collection agency and administers the Internal Revenue Code enacted by Congress.`,
     author: `@MensahAlkebuLan`,
     siteUrl: `https://uequations.com/`,

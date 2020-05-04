@@ -22,10 +22,6 @@ const Header = () => {
           <Logo />
         </S.LogoLink>
 
-        <S.NavLanguages>
-          <Languages />
-        </S.NavLanguages>
-
         <ButtonMenu
           handleClick={handleToggleMenu}
           isActive={toggleMenu}

@@ -17,7 +17,7 @@ module.exports = {
     dateFormat: `MM/DD/YYYY`,
     siteLanguage: `en`,
     ogLanguage: `en_US`,
-    defaultTitle: `IRS News | Universal Equations`,
+    defaultTitle: `IRS NEWS | Universal Equations`,
     defaultDescription: `The Internal Revenue Service is the nation's tax collection agency and administers the Internal Revenue Code enacted by Congress.`,
   },
   pt: {
