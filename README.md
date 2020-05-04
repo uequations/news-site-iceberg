@@ -1,12 +1,8 @@
 <img src="./src/images/logo-iceberg.svg" width="150">
 
-# Gatsby multi-language starter with CMS
+# News Site with CMS
 
-[Demo on Netlify](https://iceberg-gatsby-multilang.netlify.com/)
-
-[Starter on Gatsby](https://www.gatsbyjs.org/starters/diogorodrigues/iceberg-gatsby-multilang/)
-
-A starter Internationalization / i18n without third party plugins or packages for Posts and Pages. Different URLs dependending on the language. Focused on SEO, PWA, Image Optimization, Styled Components and more. This starter is also integrate with Netlify CMS to manage all pages, posts and images.
+Integrates with Netlify CMS to manage all pages, posts and images.
 
 -   Translations by using GraphQL, hooks and context API
 -   Content in markdown for pages and posts in different languages
@@ -30,7 +26,7 @@ $ gatsby new gatsby-multilanguage-site https://github.com/diogorodrigues/iceberg
 
 **With git clone**:
 ```
-$ git clone https://github.com/diogorodrigues/iceberg-gatsby-multilang.git your-project-name # Clone the project
+$ git clone https://github.com/uequations/news-site-iceberg.git your-project-name # Clone the project
 
 cd your-project-name
 
@@ -129,7 +125,7 @@ backend:
 
 ## Deploy
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/diogorodrigues/iceberg-gatsby-multilang" rel="nofollow"><img src="https://camo.githubusercontent.com/be2eb66bb727e25655f1dcff88c2fdca82a77513/68747470733a2f2f7777772e6e65746c6966792e636f6d2f696d672f6465706c6f792f627574746f6e2e737667" alt="Deploy to Netlify" data-canonical-src="https://www.netlify.com/img/deploy/button.svg" style="max-width:100%;"></a>
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/uequations/news-site-iceberg" rel="nofollow"><img src="https://camo.githubusercontent.com/be2eb66bb727e25655f1dcff88c2fdca82a77513/68747470733a2f2f7777772e6e65746c6966792e636f6d2f696d672f6465706c6f792f627574746f6e2e737667" alt="Deploy to Netlify" data-canonical-src="https://www.netlify.com/img/deploy/button.svg" style="max-width:100%;"></a>
 
 ---
 
