@@ -89,10 +89,10 @@ module.exports = {
         name: `Gatsby multiple language`,
         short_name: `Gatsby multiple language`,
         start_url: `/`,
-        background_color: `#16202c`,
-        theme_color: `#16202c`,
+        background_color: `#9EA4D3`,
+        theme_color: `#9EA4D3`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/favicon.png`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
