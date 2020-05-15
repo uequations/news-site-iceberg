@@ -1,0 +1,20 @@
+{
+  "menuItems": [
+    {
+      "name": "HOME",
+      "link": "https://uequations.com"
+    },
+    {
+      "name": "BLOG",
+      "link": "https://blogs.uequations.com"
+    },
+    {
+      "name": "YOUTUBE",
+      "link": "https://www.youtube.com/channel/UC8pLGjrB34FInrvPG63rZtw"
+    },
+    {
+      "name": "ABOUT",
+      "link": "https://www.uequations.com/about-us/"
+    }
+  ]
+}
