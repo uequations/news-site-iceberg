@@ -56,7 +56,7 @@ const PostItem = ({
   }
 
   return (
-      <S.PostItemLink to={slug}>
+      <a style={anchorStyle} href={url} target={'_self'}>
         <S.PostItemWrapper>
           {postImg && (
               <S.PostItemImg
@@ -83,7 +83,7 @@ const PostItem = ({
           <S.PostItemDescription>{hashTags}</S.PostItemDescription>
         </S.PostItemInfo>
         </S.PostItemWrapper>
-      </S.PostItemLink>
+      </a>
   );
 };
 

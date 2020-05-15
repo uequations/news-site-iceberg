@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import PostItem from '../components/PostItem'
 import TitlePage from '../components/TitlePage'
-import LocalizedLink from '../components/LocalizedLink'
 import useTranslations from '../components/useTranslations'
 
 import * as S from '../components/ListWrapper/styled'
@@ -26,8 +25,6 @@ import {
 
 
 const Index = ({ data: { allMarkdownRemark } }) => {
-    // useTranslations is aware of the global context (and therefore also "locale")
-    // so it'll automatically give back the right translations
     const {
         hello,
         subline,
@@ -44,26 +41,25 @@ const Index = ({ data: { allMarkdownRemark } }) => {
             <TitlePage text={hello}/>
             <p>{subline}</p>
 
+            <br/>
+
             <EmailShareButton>
                 <EmailIcon/>
             </EmailShareButton>
             <FacebookShareButton quote={''} url={'https://news.uequations.com/'}>
                 <FacebookIcon/>
             </FacebookShareButton>
-            <LinkedinShareButton>
+            <LinkedinShareButton url={'https://news.uequations.com/'}>
                 <LinkedinIcon/>
             </LinkedinShareButton>
-            <PinterestShareButton>
-                <PinterestIcon/>
-            </PinterestShareButton>
-            <TwitterShareButton>
+            <TwitterShareButton url={'https://news.uequations.com/'}>
                 <TwitterIcon/>
             </TwitterShareButton>
 
             <hr style={{ margin: `2rem 0` }}/>
 
             <h2>
-                <strong>{latestPosts}</strong>
+                <strong>TOPICS</strong>
             </h2>
 
             <br/>
@@ -87,7 +83,7 @@ const Index = ({ data: { allMarkdownRemark } }) => {
                          },
                      }) => (
                         <PostItem
-                            slug={`/topic/${slug}`}
+                            slug={`topic/${slug}`}
                             background={background}
                             category={category}
                             date={date}
@@ -103,7 +99,6 @@ const Index = ({ data: { allMarkdownRemark } }) => {
 
             <br/>
 
-            <LocalizedLink to={`/topic/`}>{allPosts}</LocalizedLink>
         </div>
     )
 }
@@ -118,7 +113,7 @@ export const query = graphql`
                 fileAbsolutePath: {regex: "/(topic)\/.*\\.md$/"}
             }
             sort: { fields: [frontmatter___date], order: DESC }
-            limit: 2
+            limit: 10
         ) {
             edges {
                 node {

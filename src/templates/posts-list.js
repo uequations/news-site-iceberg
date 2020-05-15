@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import PostItem from '../components/PostItem'
+import LinkPostItem from '../components/LinkPostItem'
 import TitlePage from '../components/TitlePage'
 import SEO from '../components/seo'
 
@@ -37,7 +37,7 @@ const Blog = props => {
 
     return (
         <>
-            <SEO title={pageTitle}/>
+            <SEO title={pageTitle} description={subline}/>
             <TitlePage text={hello}/>
             <p>{subline}</p>
 
@@ -71,7 +71,7 @@ const Blog = props => {
                              fields: { slug },
                          },
                      }) => (
-                        <PostItem
+                        <LinkPostItem
                             background={background}
                             category={category}
                             date={date}

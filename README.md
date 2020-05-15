@@ -1,6 +1,6 @@
 <img src="./src/images/favicon.png" width="150">
 
-# News Site
+# Community & Government News Site
 
 ## 🚀 Getting Started
 
@@ -36,20 +36,20 @@ http://localhost:8000/admin
 A quick look at the top-level files and directories you'll see in a Gatsby project.
 
 ```
-├── blog
-│   ├── markdown-file.en.md
-│   ├── markdown-file.pt.md
+├── shared-link
+│   ├── markdown-file.irs.md
+│   ├── markdown-file.nytimes.md
+│   ├── markdown-file.index.md
 ├── config
 │   ├── menu
-│   │   ├── en.json
-│   │   ├── pt.json
+│   │   ├── irs.json
+│   │   ├── nytimes.json
+│   │   ├── index.json
 │   ├── translations
-│   │   ├── en.json
-│   │   ├── pt.json
+│   │   ├── irs.json
+│   │   ├── nytimes.json
+│   │   ├── index.json
 │   ├── topics.js
-├── pages
-│   ├── markdown-file.en.md
-│   ├── markdown-file.pt.md
 ├── src
 ├── static
 │   ├── admin
@@ -64,8 +64,8 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ```
 
-1. **blog and pages directories**:
-   All markdown files to generate pages and posts.
+1. **topic pages directories**:
+   All markdown files to generate pages.
 
 2. **config**:
    All language settings: languages, strings, menu...
@@ -102,14 +102,8 @@ backend:
 ```
 
 ## Important notes:
-
--   General information for languages are defined in `config/topics.js`.
--   The general content translations are located in `config/translations` and the `useTranslations` custom hook pulls these translations (via GraphQL query) and inserts them into the pages.
--   The menu items translations are located in `config/menu` and the `useMenu` custom hook pulls these translations (via GraphQL query) and inserts them into the pages.
--   Due to the use of a global layout / context API and the language code passed to all pages (see `gatsby-node.js`), you know on all pages which language is currently displayed.
--   Blogposts are defined in `blog` directory and pages are defined in `pages` directory. The file names are the `slug` of the posts and pages.
--   A custom component for the <a> tag is implemented - this way links can stay the same for every language, without the need to manually write path prefixes.
-
+-  To add a shred links topic, you'll need to update the config/menu and config/translations folders as well as the topics.js file.
+ 
 ## Deploy
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/uequations/news-site-iceberg" rel="nofollow"><img src="https://camo.githubusercontent.com/be2eb66bb727e25655f1dcff88c2fdca82a77513/68747470733a2f2f7777772e6e65746c6966792e636f6d2f696d672f6465706c6f792f627574746f6e2e737667" alt="Deploy to Netlify" data-canonical-src="https://www.netlify.com/img/deploy/button.svg" style="max-width:100%;"></a>
@@ -119,7 +113,5 @@ backend:
 💜 _Thanks_
 
 ---
-
-This project started based on [this solution](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-i18n) to create a manner to provide translations, but I added a lots of other solutions based on my projects needs (like menu from GraphQL, markdown for pages, pagination, image optmization, styled components, PWA, CMS and more). Feel free to use this solution if you want. :)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0a6425cf-3817-41bf-82f8-a90b4e669f14/deploy-status)](https://app.netlify.com/sites/flamboyant-spence-8d97ac/deploys)

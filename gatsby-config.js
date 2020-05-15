@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `IRS NEWS | Universal Equations`,
-    description: `The Internal Revenue Service is the nation's tax collection agency and administers the Internal Revenue Code enacted by Congress.`,
+    title: `COMMUNITY & GOVERNMENT NEWS | Universal Equations`,
+    description: `From Universal Equations, community & government news from around the world.`,
     author: `@MensahAlkebuLan`,
-    siteUrl: `https://uequations.com/`,
+    siteUrl: `https://news.uequations.com/`,
   },
   plugins: [
     `gatsby-plugin-netlify-cms`,
@@ -86,8 +86,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby multiple language`,
-        short_name: `Gatsby multiple language`,
+        name: `COMMUNITY & GOVERNMENT NEWS | Universal Equations`,
+        short_name: `COMMUNITY & GOVERNMENT NEWS`,
         start_url: `/`,
         background_color: `#9EA4D3`,
         theme_color: `#9EA4D3`,

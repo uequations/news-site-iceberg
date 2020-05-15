@@ -47,7 +47,6 @@ module.exports = {
     defaultDescription: `News from various communities, government agencies, and organizations.`,
   },
   irs: {
-    default: true,
     path: `irs`,
     locale: `en-US`,
     dateFormat: `MM/DD/YYYY`,
@@ -55,5 +54,15 @@ module.exports = {
     ogLanguage: `en_US`,
     defaultTitle: `IRS NEWS | Universal Equations`,
     defaultDescription: `The Internal Revenue Service is the nation's tax collection agency and administers the Internal Revenue Code enacted by Congress.`,
+  },
+  index: {
+    default: true,
+    path: `index`,
+    locale: `en-US`,
+    dateFormat: `MM/DD/YYYY`,
+    siteLanguage: `en`,
+    ogLanguage: `en_US`,
+    defaultTitle: `COMMUNITY & GOVERNMENT NEWS | Universal Equations`,
+    defaultDescription: `From Universal Equations, community and government news from around thw world.`,
   },
 }
