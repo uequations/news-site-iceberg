@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { LocaleContext } from '../Layout';
-import locales from '../../../config/i18n';
+import topics from '../../../config/topics';
 
 // Use the globally available context to choose the right path
 const LocalizedLink = ({ to, ...props }) => {
@@ -13,9 +13,9 @@ const LocalizedLink = ({ to, ...props }) => {
   // If it's another language, add the "path"
   // However, if the homepage/index page is linked don't add the "to"
   // Because otherwise this would add a trailing slash
-  const path = locales[locale].default
+  const path = topics[locale].default
     ? to
-    : `${locales[locale].path}${isIndex ? `` : `${to}`}`;
+    : `${topics[locale].path}${isIndex ? `` : `${to}`}`;
 
   return <Link {...props} to={path} />;
 };

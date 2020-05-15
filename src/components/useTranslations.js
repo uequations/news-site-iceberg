@@ -40,7 +40,8 @@ const query = graphql`
             hello
             subline
             latestPosts
-            category
+            pageTitle
+            path
             allPosts
             toRead
 

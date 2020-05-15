@@ -1,7 +1,9 @@
 {
   "home": "Home",
-  "hello": "IRS NEWS",
+  "hello": "TREASURY NEWS",
+  "pageTitle": "TREASURY NEWS | Universal Equations",
   "subline": "The Internal Revenue Service is the nation's tax collection agency and administers the Internal Revenue Code enacted by Congress.",
+  "path": "treasury",
   "latestPosts": "Latest posts",
   "category": "Category",
   "allPosts": "All Posts",
@@ -10,7 +12,6 @@
   "prev": "Prev",
   "of": "of",
   "button": "Button",
-
   "aboutProject": "Iceberg Gatsby is a PWA, save it for offline reading.",
   "seeMorePWA": "See more PWA here",
   "maintainedBy": "Maintained by",

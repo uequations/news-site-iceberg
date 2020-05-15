@@ -1,19 +1,6 @@
 <img src="./src/images/favicon.png" width="150">
 
-# News Site with CMS
-
-Integrates with Netlify CMS to manage all pages, posts and images.
-
--   Translations by using GraphQL, hooks and context API
--   Content in markdown for pages and posts in different languages
--   General translations for any content
--   Creation of menus by using, jSON, translations and GraphQL
--   Netlify CMS to manage all pages, posts and images
--   Styled Components to styles
--   All important seetings for speedy and optimized images
--   Blog Posts list with pagination
--   Focus on SEO
--   PWA
+# News Site
 
 ## 🚀 Getting Started
 
@@ -59,7 +46,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 │   ├── translations
 │   │   ├── en.json
 │   │   ├── pt.json
-│   ├── i18n.js
+│   ├── topics.js
 ├── pages
 │   ├── markdown-file.en.md
 │   ├── markdown-file.pt.md
@@ -82,7 +69,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 2. **config**:
    All language settings: languages, strings, menu...
-   In `i18n.js` you can set the languages and some others important info
+   In `topics.js` you can set the languages and some others important info
 
 3. **src**:
    Components, hooks, templates and fixed pages (Different of markdown pages, these pages have the same url for all languages and the text content needs to be inserted in `config/translations` files).
@@ -116,7 +103,7 @@ backend:
 
 ## Important notes:
 
--   General information for languages are defined in `config/i18n.js`.
+-   General information for languages are defined in `config/topics.js`.
 -   The general content translations are located in `config/translations` and the `useTranslations` custom hook pulls these translations (via GraphQL query) and inserts them into the pages.
 -   The menu items translations are located in `config/menu` and the `useMenu` custom hook pulls these translations (via GraphQL query) and inserts them into the pages.
 -   Due to the use of a global layout / context API and the language code passed to all pages (see `gatsby-node.js`), you know on all pages which language is currently displayed.

@@ -31,7 +31,7 @@ const Index = ({ data: { allMarkdownRemark } }) => {
     const {
         hello,
         subline,
-        category,
+        pageTitle,
         latestPosts,
         allPosts,
     } = useTranslations()
@@ -40,14 +40,14 @@ const Index = ({ data: { allMarkdownRemark } }) => {
 
     return (
         <div className="homepage">
-            <SEO title="IRS NEWS | Universal Equations"/>
+            <SEO title={pageTitle}/>
             <TitlePage text={hello}/>
             <p>{subline}</p>
 
             <EmailShareButton>
                 <EmailIcon/>
             </EmailShareButton>
-            <FacebookShareButton>
+            <FacebookShareButton quote={''} url={'https://news.uequations.com/'}>
                 <FacebookIcon/>
             </FacebookShareButton>
             <LinkedinShareButton>
@@ -80,6 +80,7 @@ const Index = ({ data: { allMarkdownRemark } }) => {
                                  title,
                                  image,
                                  url,
+                                 topic,
                              },
                              timeToRead,
                              fields: { slug },
@@ -130,6 +131,7 @@ export const query = graphql`
                         date(formatString: $dateFormat)
                         url
                         hashTags
+                        topic
                     }
                     timeToRead
                     fields {

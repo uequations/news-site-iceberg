@@ -1,5 +1,6 @@
 const path = require(`path`);
-const locales = require(`./config/i18n`);
+
+const topics = require(`./config/topics`);
 const {
   localizedSlug,
   findKey,
@@ -13,12 +14,12 @@ exports.onCreatePage = ({ page, actions }) => {
   // So everything in src/pages/
   deletePage(page);
 
-  // Grab the keys ('en' & 'pt') of locales and map over them
-  Object.keys(locales).map(lang => {
-    // Use the values defined in "locales" to construct the path
-    const localizedPath = locales[lang].default
+  // Grab the keys ('en' & 'pt') of topics and map over them
+  Object.keys(topics).map(topic => {
+    // Use the values defined in "topics" to construct the path
+    const localizedPath = topics[topic].default
       ? page.path
-      : `${locales[lang].path}${page.path}`;
+      : `${topics[topic].path}${page.path}`;
 
     return createPage({
       // Pass on everything from the original page
@@ -31,8 +32,8 @@ exports.onCreatePage = ({ page, actions }) => {
       // This should ensure that the locale is available on every page
       context: {
         ...page.context,
-        locale: lang,
-        dateFormat: locales[lang].dateFormat,
+        locale: topic,
+        dateFormat: topics[topic].dateFormat,
       },
     });
   });
@@ -53,7 +54,7 @@ exports.onCreateNode = ({ node, actions }) => {
     const name = path.basename(node.fileAbsolutePath, `.md`);
 
     // Find the key that has "default: true" set (in this case it returns "en")
-    const defaultKey = findKey(locales, o => o.default === true);
+    const defaultKey = findKey(topics, o => o.default === true);
 
     // Check if file.name.lang has the default lang type.
     // (in this case the default language is for files set with "en")
@@ -62,7 +63,7 @@ exports.onCreateNode = ({ node, actions }) => {
     // Files are defined with "name-with-dashes.lang.md"
     // So grab the lang from that string
     // If it's the default language, pass the locale for that
-    const lang = isDefault ? defaultKey : name.split(`.`)[1];
+    const topic = isDefault ? defaultKey : name.split(`.`)[1];
 
     // Get the entire file name and remove the lang of it
     const slugFileName = name.split(`.`)[0];
@@ -74,7 +75,7 @@ exports.onCreateNode = ({ node, actions }) => {
 
     // Adding the nodes on GraphQL for each post as "fields"
     createNodeField({ node, name: `slug`, value: slug });
-    createNodeField({ node, name: `locale`, value: lang });
+    createNodeField({ node, name: `locale`, value: topic });
     createNodeField({ node, name: `isDefault`, value: isDefault });
   }
 };
@@ -158,14 +159,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Creating Posts List and its Pagination
   const postsPerPage = 4;
-  const langs = Object.keys(locales).length;
-  const numPages = Math.ceil(postsTotal / langs / postsPerPage);
+  const topicsNum = Object.keys(topics).length;
+  const numPages = Math.ceil(postsTotal / topicsNum / postsPerPage);
 
-  Object.keys(locales).map(lang => {
-    // Use the values defined in "locales" to construct the path
-    const localizedPath = locales[lang].default
-      ? '/topic'
-      : `/topic/${locales[lang].path}`;
+  Object.keys(topics).map(topic => {
+    // Use the values defined in "topics" to construct the path
+    const localizedPath = `/topic/${topics[topic].path}`;
 
     return Array.from({ length: numPages }).forEach((_, index) => {
       createPage({
@@ -179,8 +178,8 @@ exports.createPages = async ({ graphql, actions }) => {
           skip: index * postsPerPage,
           numPages,
           currentPage: index + 1,
-          locale: lang,
-          dateFormat: locales[lang].dateFormat,
+          locale: topic,
+          dateFormat: topics[topic].dateFormat,
         },
       });
     });

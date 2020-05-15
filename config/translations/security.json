@@ -1,9 +1,9 @@
 {
   "home": "Home",
-  "hello": "IRS NEWS",
-  "pageTitle": "IRS NEWS | Universal Equations",
+  "hello": "SECURITY NEWS",
+  "pageTitle": "SECURITY NEWS | Universal Equations",
   "subline": "The Internal Revenue Service is the nation's tax collection agency and administers the Internal Revenue Code enacted by Congress.",
-  "path": "irs",
+  "path": "security",
   "latestPosts": "Latest posts",
   "category": "Category",
   "allPosts": "All Posts",
