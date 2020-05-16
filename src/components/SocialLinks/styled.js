@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const SocialLinksList = styled.ul`
   display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const SocialLinksItem = styled.li`

@@ -4,9 +4,11 @@ import media from 'styled-media-query';
 export const FooterWrapper = styled.div`
   margin-top: 3rem;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+
 `;
 
 export const FooterContainer = styled.div`
+
   width: 100%;
   max-width: var(--width-container);
   margin: 0 auto;

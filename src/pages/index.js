@@ -29,36 +29,49 @@ const Index = ({ data: { allMarkdownRemark } }) => {
         hello,
         subline,
         pageTitle,
-        latestPosts,
-        allPosts,
     } = useTranslations()
 
     const postList = allMarkdownRemark.edges
+
+    const shareButtonStyle = {
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex'
+    }
+
+    const centerText = {textAlign: 'center'}
 
     return (
         <div className="homepage">
             <SEO title={pageTitle}/>
             <TitlePage text={hello}/>
-            <p>{subline}</p>
-
+            <div style={centerText}>
+                <p>{subline}</p>
+            </div>
             <br/>
 
-            <EmailShareButton>
-                <EmailIcon/>
-            </EmailShareButton>
-            <FacebookShareButton quote={''} url={'https://news.uequations.com/'}>
-                <FacebookIcon/>
-            </FacebookShareButton>
-            <LinkedinShareButton url={'https://news.uequations.com/'}>
-                <LinkedinIcon/>
-            </LinkedinShareButton>
-            <TwitterShareButton url={'https://news.uequations.com/'}>
-                <TwitterIcon/>
-            </TwitterShareButton>
+            <div style={shareButtonStyle}>
+                <EmailShareButton subject={`I would like to share: ${pageTitle}`}
+                                  body={`I would like to share: ${pageTitle}\n${subline}`}
+                                  url={'https://news.uequations.com/'}>
+                    <EmailIcon/>
+                </EmailShareButton>
+                <FacebookShareButton quote={`I would like to share: ${pageTitle}\n${subline}`}
+                                     url={'https://news.uequations.com/'}>
+                    <FacebookIcon/>
+                </FacebookShareButton>
+                <LinkedinShareButton title={pageTitle} summary={`I would like to share: ${pageTitle}\n${subline}`}
+                                     source={pageTitle} url={'https://news.uequations.com/'}>
+                    <LinkedinIcon/>
+                </LinkedinShareButton>
+                <TwitterShareButton title={pageTitle} via={`uequations`} url={'https://news.uequations.com/'}>
+                    <TwitterIcon/>
+                </TwitterShareButton>
+            </div>
 
             <hr style={{ margin: `2rem 0` }}/>
 
-            <h2>
+            <h2 style={centerText}>
                 <strong>TOPICS</strong>
             </h2>
 

@@ -97,6 +97,7 @@ PostItem.propTypes = {
   description: PropTypes.string.isRequired,
   url: PropTypes.string,
   hashTags: PropTypes.string,
+  image: PropTypes.string,
 };
 
 export default PostItem;

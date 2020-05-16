@@ -6,6 +6,7 @@ export const TitleElement = styled.h1`
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: var(--space-lg);
+  text-align: center;
 
   ${media.greaterThan('medium')`
     line-height: 1.1;
