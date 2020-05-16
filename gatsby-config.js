@@ -86,7 +86,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `COMMUNITY & GOVERNMENT NEWS | Universal Equations`,
+        name: `COMMUNITY & GOVERNMENT NEWS`,
         short_name: `COMMUNITY & GOVERNMENT NEWS`,
         start_url: `/`,
         background_color: `#9EA4D3`,

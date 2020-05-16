@@ -35,12 +35,19 @@ const Blog = props => {
         path
     } = useTranslations()
 
+    const shareButtonStyle = {
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex'
+    }
+
     return (
         <>
             <SEO title={pageTitle} description={subline}/>
             <TitlePage text={hello}/>
             <p>{subline}</p>
-
+            <br/>
+            <div style={shareButtonStyle}>
             <EmailShareButton subject={`I would like to share: ${pageTitle}`} body={`I would like to share: ${pageTitle}\n${subline}`} url={`https://news.uequations.com/topic/${path}`}>
                 <EmailIcon/>
             </EmailShareButton>
@@ -53,6 +60,7 @@ const Blog = props => {
             <TwitterShareButton title={pageTitle} via={`uequations`} url={`https://news.uequations.com/topic/${path}`}>
                 <TwitterIcon/>
             </TwitterShareButton>
+            </div>
 
             <S.ListWrapper>
                 {postList.map(
