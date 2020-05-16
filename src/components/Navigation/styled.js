@@ -107,20 +107,6 @@ export const ExternalNavigationLink = styled.a`
   }
 `;
 
-export const NavigationButton = styled(Link)`
-  background: var(--primary-color);
-  border-radius: 2px;
-  color: #fff;
-  display: inline-block;
-  padding: var(--space-sm) var(--space);
-  text-decoration: none;
-  font-weight: bold;
-  text-align: center;
-  ${media.greaterThan('medium')`
-    margin-left: var(--space-lg);
-  `}
-`;
-
 export const ExternalNavigationButton = styled.a`
   background: var(--primary-color);
   border-radius: 2px;

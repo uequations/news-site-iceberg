@@ -10,7 +10,6 @@ const PostItem = ({
   background,
   category,
   date,
-  timeToRead,
   title,
   description,
   image,

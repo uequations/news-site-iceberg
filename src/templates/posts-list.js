@@ -7,6 +7,7 @@ import SEO from '../components/seo'
 import Pagination from '../components/Pagination'
 
 import * as S from '../components/ListWrapper/styled'
+
 import {
     EmailIcon,
     EmailShareButton,
@@ -16,6 +17,8 @@ import {
     LinkedinShareButton, PinterestIcon, PinterestShareButton, TwitterIcon, TwitterShareButton,
 } from 'react-share'
 import useTranslations from '../components/useTranslations'
+import Navigation from '../components/Navigation'
+import BackToAllTopicsButton from '../components/BackToAllTopicsButton'
 
 const Blog = props => {
     const postList = props.data.allMarkdownRemark.edges
@@ -32,35 +35,52 @@ const Blog = props => {
         hello,
         subline,
         pageTitle,
-        path
+        path,
     } = useTranslations()
 
-    const shareButtonStyle = {
+    const centerItemsStyle = {
         alignItems: 'center',
         justifyContent: 'center',
-        display: 'flex'
+        display: 'flex',
     }
+
+    const centerTextStyle = {textAlign: 'center'}
 
     return (
         <>
             <SEO title={pageTitle} description={subline}/>
             <TitlePage text={hello}/>
+
+            <div style={centerTextStyle}>
             <p>{subline}</p>
-            <br/>
-            <div style={shareButtonStyle}>
-            <EmailShareButton subject={`I would like to share: ${pageTitle}`} body={`I would like to share: ${pageTitle}\n${subline}`} url={`https://news.uequations.com/topic/${path}`}>
-                <EmailIcon/>
-            </EmailShareButton>
-            <FacebookShareButton quote={`I would like to share: ${pageTitle}\n${subline}`} url={`https://news.uequations.com/topic/${path}`}>
-                <FacebookIcon/>
-            </FacebookShareButton>
-            <LinkedinShareButton title={pageTitle} summary={`I would like to share: ${pageTitle}\n${subline}`} source={pageTitle} url={`https://news.uequations.com/topic/${path}`}>
-                <LinkedinIcon/>
-            </LinkedinShareButton>
-            <TwitterShareButton title={pageTitle} via={`uequations`} url={`https://news.uequations.com/topic/${path}`}>
-                <TwitterIcon/>
-            </TwitterShareButton>
             </div>
+            <br/>
+
+            <div style={centerItemsStyle}>
+                <BackToAllTopicsButton/>
+            </div>
+            <br/>
+            <div style={centerItemsStyle}>
+                <EmailShareButton subject={`I would like to share: ${pageTitle}`}
+                                  body={`I would like to share: ${pageTitle}\n${subline}`}
+                                  url={`https://news.uequations.com/topic/${path}`}>
+                    <EmailIcon/>
+                </EmailShareButton>
+                <FacebookShareButton quote={`I would like to share: ${pageTitle}\n${subline}`}
+                                     url={`https://news.uequations.com/topic/${path}`}>
+                    <FacebookIcon/>
+                </FacebookShareButton>
+                <LinkedinShareButton title={pageTitle} summary={`I would like to share: ${pageTitle}\n${subline}`}
+                                     source={pageTitle} url={`https://news.uequations.com/topic/${path}`}>
+                    <LinkedinIcon/>
+                </LinkedinShareButton>
+                <TwitterShareButton title={pageTitle} via={`uequations`}
+                                    url={`https://news.uequations.com/topic/${path}`}>
+                    <TwitterIcon/>
+                </TwitterShareButton>
+            </div>
+
+            <br/>
 
             <S.ListWrapper>
                 {postList.map(
